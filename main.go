@@ -18,7 +18,7 @@ func main() {
 		}
 		arr = append(arr, num)
 
-		low := mad.Median(arr) - int(float64((arr))*1.5)
+		low := mad.Median(arr) - int(float64(mad.MedianAbsoltDev(arr))*1.5)
 		hight := mad.Median(arr) + int(float64(mad.MedianAbsoltDev(arr))*1.5)
 
 		fmt.Println(low, hight)

@@ -12,11 +12,12 @@ func Median(slice []int) int {
 	sort.Ints(slice)
 	if length%2 == 0 {
 		return (slice[length/2-1] + slice[length/2]) / 2
+	} else {
+		return slice[length/2]
 	}
-	return slice[length/2]
 }
 
-func MedianAbsoluteDev(numbers []int) int {
+func MedianAbsoluteDeviation(numbers []int) int {
 	median := Median(numbers)
 	absDeviations := make([]int, len(numbers))
 
@@ -39,9 +40,8 @@ func main() {
 		arr = append(arr, num)
 
 		if len(arr) > 1 {
-			mad := MedianAbsoluteDev(arr)
+			mad := MedianAbsoluteDeviation(arr)
 			med := Median(arr)
-
 			low := med - int(float64(mad)*1.5)
 			high := med + int(float64(mad)*1.5)
 
